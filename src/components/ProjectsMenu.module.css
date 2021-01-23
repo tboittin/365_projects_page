@@ -1,0 +1,23 @@
+.projectsMenu {
+  width: fit-content;
+  min-height: 100px;
+  padding: 40px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: rgb(155, 155, 155);
+  text-align: left;
+}
+
+.projectsMenu h1 {
+  font-size: 1.5rem;
+}
+
+.projectsMenu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projectsMenu ul li {
+  margin-top: 10px;
+}
