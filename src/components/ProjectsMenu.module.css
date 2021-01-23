@@ -7,6 +7,7 @@
   right: 50px;
   background-color: rgb(155, 155, 155);
   text-align: left;
+  z-index: 1;
 }
 
 .projectsMenu h1 {
