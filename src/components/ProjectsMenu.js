@@ -1,27 +1,34 @@
+import SwitchComponent from './SwitchComponent'
 import style from './ProjectsMenu.module.css'
-import ExpandingCards from './ExpandingCards'
+import { useState } from 'react'
 
 const ProjectsMenu = ({ projects }) => {
-  console.log(projects)
+  const [value, setValue] = useState()
+
+  const handleValueChange = (e) => {
+    setValue(e.target.value)
+  }
+
   return (
     <>
       <div className={style.projectsMenu}>
         <h1>Choose a project</h1>
-        <ul>
+        <ul onChange={(e) => handleValueChange(e)}>
           {projects.map((project) => (
             <li key={project.id}>
               <input
                 type="radio"
-                id={project.name}
                 name={project.name}
                 value={project.name}
+                checked={value === project.name}
               />
               {project.name}
             </li>
           ))}
         </ul>
       </div>
-      <ExpandingCards />
+      {value && <SwitchComponent projects={projects} componentName={value} />}
+      {!value && <h1>Hello World!</h1>}
     </>
   )
 }
